@@ -31,3 +31,24 @@
 - [x] When converting to a larger bit length (e.g., int to long), the value may change from positive to negative.
 - [x] When converting from signed to unsigned types (e.g., int to byte), negative numbers can't be represented.
 - [x] When converting from a double to int, the value is truncated to a whole number.
+
+## Testing Principles: How
+1. Why are we often able to test more rigorously at the unit level rather than the system level?
+- [x] The tests tend to run faster, so we can run more of them.
+- [x] We can usually see more of the internal state at the unit level so we can build stronger oracles.
+
+2. When we say that we want redundant verification, what do we mean?
+- [x] We want several different verification techniques checking the same program or subsystem.
+
+3. Which of the following are good ways to work with developers to reduce systematic errors?
+- [x] Create libraries or utility functions to encapsulate operations that developers tend to get wrong.
+- [x] Create checklists for developers based on the most common errors seen in test.
+- [x] Use languages / IDEs that eliminate certain classes of errors by compile-time checks.
+- [x] Create tools to test/verify specific kinds of common errors.
+
+4. We state that programs, as well as tests, can be flakey.  What does it mean for a program to be flakey?
+- [x] Given the same inputs, sometimes the program fails a test and other times it does not.
+
+5. Why is observability an important issue in testing?
+- [x] If a program error is transient (it happens and is masked out by other code), you might not be able to "see" it and the test may pass.
+- [x] Often programs are stateful - that is, a test may trigger an error, but it only becomes visible as an output if a long sequence of steps are executed, whereas it might be immediately visible by examining internal state.
